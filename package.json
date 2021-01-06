@@ -1,6 +1,6 @@
 {
   "name": "cloudhound",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Find objects in the cloud",
   "main": "dist/index.js",
   "nodeVersion": ">= 12.0.0",
