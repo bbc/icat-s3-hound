@@ -1,22 +1,22 @@
 # Cloudhound
 
-![npm](https://img.shields.io/npm/v/cloudhound-js.svg)
-[![Build Status](https://travis-ci.org/nspragg/cloudhound-js.svg)](https://travis-ci.org/nspragg/cloudhound-js) [![Coverage Status](https://coveralls.io/repos/github/nspragg/cloudhound-js/badge.svg?branch=master)](https://coveralls.io/github/nspragg/cloudhound-js?branch=master)
+![npm](https://img.shields.io/npm/v/cloudhound.svg)
+[![Build Status](https://travis-ci.org/nspragg/cloudhound.svg)](https://travis-ci.org/nspragg/cloudhound) [![Coverage Status](https://coveralls.io/repos/github/nspragg/cloudhound/badge.svg?branch=master)](https://coveralls.io/github/nspragg/cloudhound?branch=master)
  ![license](https://img.shields.io/badge/license-MIT-blue.svg) 
-![github-issues](https://img.shields.io/github/issues/nspragg/cloudhound-js.svg)
+![github-issues](https://img.shields.io/github/issues/nspragg/cloudhound.svg)
 
-> Flexible and fluent interface for searching the file system
+> Flexible and fluent interface finding files in the cloud
 
 ## Installation
 
 ```
-npm install --save cloudhound-js
+npm install --save cloudhound
 ```
 
 ## Usage
 
 ## Documentation
-For more examples and API details, see [API documentation](https://nspragg.github.io/cloudhound-js/)
+For more examples and API details, see [API documentation](https://nspragg.github.io/cloudhound/)
 
 ## Test
 
