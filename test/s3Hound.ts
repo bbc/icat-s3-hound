@@ -60,47 +60,4 @@ describe('S3Hound', async () => {
 
     assert.equal(response.contents.length, 9);
   });
-
-  // describe('.ext', () => {
-  //   it('returns entries matching a given file extension', async () => {
-  //     const cloudhound = S3Hound.create(sdk);
-  //
-  //     const results: Results = await cloudhound
-  //       .buckets('myBucket')
-  //       .ext('jpg')
-  //       .find();
-  //
-  //     for (const entry of results.entries) {
-  //       assert.match(entry.key, /\.jpg$/);
-  //     }
-  //   });
-  // });
-  //
-  // describe('.maxRequests', () => {
-  //   it('limits the number of requests', async () => {
-  //     const requests = 1;
-  //     const results: Results = await S3Hound.create(sdk)
-  //       .buckets('myBucket')
-  //       .maxRequests(requests)
-  //       .find();
-  //
-  //     assert.equal(results.entries.length, 3);
-  //     sinon.assert.callCount(sdk.listObjectsV2, 1);
-  //   });
-  // });
-  //
-  // describe('.maxKeys', () => {
-  //   it('sets the max number of keys per response', async () => {
-  //     const cloudhound = S3Hound.create(sdk);
-  //     const maxKeys = 3;
-  //     const results: Results = await cloudhound
-  //       .buckets('myBucket')
-  //       .maxKeys(maxKeys)
-  //       .find();
-  //
-  //     sinon.assert.calledWith(sdk.listObjectsV2, sinon.match({
-  //       MaxKeys: maxKeys
-  //     }));
-  //   });
-  // });
 });
