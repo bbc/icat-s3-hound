@@ -1,0 +1,83 @@
+{
+  "name": "cloudhound",
+  "version": "0.0.1",
+  "description": "Find files in the cloud",
+  "main": "dist/index.js",
+  "nodeVersion": ">= 12.0.0",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "jsdoc": "jsdoc -c ./docconfig/jsdoc.json",
+    "build": "npm run clean && tsc",
+    "watch": "tsc --watch",
+    "clean": "rm -fr dist/*",
+    "prepare": "npm run build",
+    "prepublishOnly": "tsc -p ./ --outDir dist",
+    "test": "mocha -r ts-node/register test/*.ts",
+    "posttest": "npm run lint",
+    "postinstall": "npm run build",
+    "lint": "tslint --project tsconfig.json --format stylish",
+    "coverage": "nyc mocha && nyc report --reporter=html && nyc report --reporter=json-summary"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nspragg/cloudhound.git"
+  },
+  "keywords": [
+    "aws",
+    "s3",
+    "file",
+    "cloud",
+    "recursive",
+    "search",
+    "cloudhound",
+    "file",
+    "hound",
+    "lister",
+    "find",
+    "walk",
+    "walker",
+    "finder",
+    "file system"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nspragg/cloudhound/issues"
+  },
+  "homepage": "https://github.com/nspragg/cloudhound",
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "@types/chai": "^4.2.12",
+    "@types/lodash": "^4.14.161",
+    "@types/mocha": "^2.2.43",
+    "@types/node": "^10.12.18",
+    "@types/sinon": "^4.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-iplayer-base": "^1.0.0",
+    "chai": "^4.1.2",
+    "jsdoc": "^3.4.3",
+    "nyc": "^11.2.1",
+    "sinon": "^2.3.6",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.8.0",
+    "tslint-config-airbnb": "^5.11.2",
+    "tslint-microsoft-contrib": "^6.2.0",
+    "typescript": "^4.0.0"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  },
+  "dependencies": {
+    "aws-sdk": "^2.822.0",
+    "lodash": "^4.17.20"
+  }
+}
