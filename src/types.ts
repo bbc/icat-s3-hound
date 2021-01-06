@@ -10,8 +10,12 @@ export interface S3HoundParams {
   s3Factory?: S3Factory;
 }
 
+export interface CloudHound {
+  find(): Promise<Response>;
+}
+
 export interface S3Factory {
-  getClient(): S3;
+  getClient(): Promise<S3>;
 }
 
 export interface Response {

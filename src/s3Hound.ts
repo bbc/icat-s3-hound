@@ -1,9 +1,8 @@
 import {S3} from 'aws-sdk';
 import {EventEmitter} from 'events';
 import {bind} from './bind';
-import {CloudHound} from './cloudHound';
 import * as DefaultFactory from './simpleS3Factory';
-import {Nullable, Response, S3Factory, S3HoundParams} from './types';
+import {CloudHound, Nullable, Response, S3Factory, S3HoundParams} from './types';
 
 const CONT_TOKEN = 'ContinuationToken';
 

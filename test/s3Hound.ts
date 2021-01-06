@@ -15,7 +15,7 @@ AWS.config.update({region: 'eu-west-1'});
 describe('S3Hound', async () => {
   let getClient;
   beforeEach(() => {
-    getClient = sandbox.stub(SimpleS3Factory, 'getClient').returns({
+    getClient = sandbox.stub(SimpleS3Factory, 'getClient').resolves({
       listObjectsV2: () => {
         return {
           promise: async () => {
@@ -51,7 +51,7 @@ describe('S3Hound', async () => {
 
     it('requests multiple pages', async () => {
       const pageStack = [page3, page2, page1];
-      getClient.returns({
+      getClient.resolves({
         listObjectsV2: () => {
           return {
             promise: async () => {
