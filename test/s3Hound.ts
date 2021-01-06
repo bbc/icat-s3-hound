@@ -10,7 +10,7 @@ const page1 = require('./fixtures/page1');
 const page2 = require('./fixtures/page2');
 const page3 = require('./fixtures/page3');
 
-AWS.config.update({ region: 'eu-west-1' });
+AWS.config.update({region: 'eu-west-1'});
 
 describe('S3Hound', async () => {
   let getClient;
@@ -30,34 +30,39 @@ describe('S3Hound', async () => {
     sandbox.restore();
   });
 
-  it('returns the contents for a given bucket', async () => {
-    const cloudHound = new S3Hound({
-      s3Factory: SimpleS3Factory,
-      bucket: 'myBucket'
-    });
-    const response = await cloudHound.find();
-
-    assert.equal(response.contents.length, 3);
-  });
-
-  it('requests multiple pages', async () => {
-    const pageStack = [page3, page2, page1];
-    getClient.returns({
-      listObjectsV2: () => {
-        return {
-          promise: async () => {
-            return pageStack.pop();
-          }
-        };
-      }
+  describe('All objects', () => {
+    let cloudHound;
+    beforeEach(() => {
+      cloudHound = S3Hound.newQuery({
+        s3Factory: SimpleS3Factory,
+        bucket: 'myBucket'
+      });
     });
 
-    const cloudhound = new S3Hound({
-      s3Factory: SimpleS3Factory,
-      bucket: 'myBucket'
+    it('returns the contents for a given bucket', async () => {
+      const response = await cloudHound.find();
+      assert.equal(response.contents.length, 3);
     });
-    const response = await cloudhound.find();
 
-    assert.equal(response.contents.length, 9);
+    it('returns the contents for a given bucket using constructor', async () => {
+      const response = await cloudHound.find();
+      assert.equal(response.contents.length, 3);
+    });
+
+    it('requests multiple pages', async () => {
+      const pageStack = [page3, page2, page1];
+      getClient.returns({
+        listObjectsV2: () => {
+          return {
+            promise: async () => {
+              return pageStack.pop();
+            }
+          };
+        }
+      });
+      const response = await cloudHound.find();
+
+      assert.equal(response.contents.length, 9);
+    });
   });
 });

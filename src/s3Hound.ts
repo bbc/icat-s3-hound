@@ -29,6 +29,10 @@ export class S3Hound extends EventEmitter implements CloudHound {
     bind(this);
   }
 
+  public static newQuery(params: S3HoundParams): CloudHound {
+    return new S3Hound(params);
+  }
+
   async find(): Promise<Response> {
     const compose = this.composeFilters;
     const params = this.getListObjectParams();
