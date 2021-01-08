@@ -1,6 +1,6 @@
 {
   "name": "cloudhound",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Find objects in the cloud",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -76,7 +76,9 @@
     "instrument": true
   },
   "dependencies": {
-    "aws-sdk": "^2.822.0",
     "lodash": "^4.17.20"
+  },
+  "peerDependencies": {
+    "aws-sdk": "^2.823.0"
   }
 }
