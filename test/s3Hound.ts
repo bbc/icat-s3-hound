@@ -3,6 +3,7 @@ import {assert} from 'chai';
 import * as sinon from 'sinon';
 import {S3Hound} from '../src/s3Hound';
 import * as SimpleS3Factory from '../src/simpleS3Factory';
+import {S3Factory} from '../src/types';
 
 const sandbox = sinon.sandbox.create();
 const results = require('./fixtures/basic');
@@ -11,6 +12,12 @@ const page2 = require('./fixtures/page2');
 const page3 = require('./fixtures/page3');
 
 AWS.config.update({region: 'eu-west-1'});
+
+class TestS3Factory implements S3Factory {
+  async getClient(): Promise<AWS.S3> {
+    return new AWS.S3({ apiVersion: '2006-03-01' });
+  }
+}
 
 describe('S3Hound', async () => {
   let getClient;
@@ -34,7 +41,7 @@ describe('S3Hound', async () => {
     let cloudHound;
     beforeEach(() => {
       cloudHound = S3Hound.newQuery({
-        s3Factory: SimpleS3Factory,
+        s3Factory: new TestS3Factory(),
         bucket: 'myBucket'
       });
     });

@@ -3,8 +3,8 @@
   "version": "0.0.4",
   "description": "Find objects in the cloud",
   "main": "dist/index.js",
-  "nodeVersion": ">= 12.0.0",
   "types": "dist/index.d.ts",
+  "nodeVersion": ">= 12.0.0",
   "scripts": {
     "jsdoc": "jsdoc -c ./docconfig/jsdoc.json",
     "build": "tsc",

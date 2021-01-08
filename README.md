@@ -16,7 +16,13 @@ npm install --save cloudhound
 ```
 
 ## Usage
+```ts
+import {S3Hound} from 'cloudhound';
 
+const cloudHound = S3Hound.newQuery({ bucket: 'myBucket' });
+const objects = await cloudhound.find(); // all objects
+console.log(objects);
+```
 ## Documentation
 For more examples and API details, see [API documentation](https://nspragg.github.io/cloudhound/)
 
