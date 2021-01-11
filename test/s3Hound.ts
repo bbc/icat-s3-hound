@@ -14,7 +14,11 @@ AWS.config.update({region: 'eu-west-1'});
 
 describe('S3Hound', async () => {
   let getClient;
+  let cloudHound;
+
   beforeEach(() => {
+    cloudHound = S3Hound.newQuery({bucket: 'myBucket'});
+
     getClient = sandbox.stub(SimpleS3Factory, 'getClient').resolves({
       listObjectsV2: () => {
         return {
@@ -31,11 +35,6 @@ describe('S3Hound', async () => {
   });
 
   describe('All objects', () => {
-    let cloudHound;
-    beforeEach(() => {
-      cloudHound = S3Hound.newQuery({bucket: 'myBucket'});
-    });
-
     it('returns the contents for a given bucket', async () => {
       const response = await cloudHound.find();
       assert.equal(response.contents.length, 3);
