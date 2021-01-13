@@ -11,6 +11,8 @@ export interface S3HoundParams {
 }
 
 export interface CloudHound {
+  limit(n: number): CloudHound;
+  prefix(prefix: string): CloudHound;
   find(): Promise<Response>;
 }
 

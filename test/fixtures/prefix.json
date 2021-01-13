@@ -1,0 +1,26 @@
+{
+  "IsTruncated": true,
+  "Contents": [
+    {
+      "Key": "json/2795.jpg",
+      "LastModified": "2017-09-25T08: 02: 32.000Z",
+      "ETag": "f2e55808abe1d8c6f41abaf7b3b7621c",
+      "Size": 22517,
+      "StorageClass": "STANDARD"
+    },
+    {
+      "Key": "json/2796.txt",
+      "LastModified": "2017-09-25T08: 02: 32.000Z",
+      "ETag": "e0c8f9e3ba6e8fcc132bcd872addcc66",
+      "Size": 22602,
+      "StorageClass": "STANDARD"
+    },
+    {
+      "Key": "json/2797.jpg",
+      "LastModified": "2017-09-25T08: 02: 32.000Z",
+      "ETag": "c0dfbd066d8a868a11ffd7b7dded97f3",
+      "Size": 23007,
+      "StorageClass": "STANDARD"
+    }
+  ]
+}

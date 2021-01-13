@@ -8,11 +8,35 @@
 
 #### List all with pagination
 
-The example below fetch list all objects from a given bucket:
+List all objects from a given bucket:
 
 ```js
 const CloudHound = require('cloudhound');
 
 const objects = CloudHound.newQuery({ bucket: 'myBucket' }).find();
-objects.then(console.log);
+console.log(objects);
+```
+
+List objects given a prefix:
+
+```js
+const CloudHound = require('cloudhound');
+
+const objects = await CloudHound.newQuery({ bucket: 'myBucket' })
+  .prefix('csv')
+  .find();
+
+console.log(objects);
+```
+
+Limit the number of objects:
+
+```js
+const CloudHound = require('cloudhound');
+
+const objects = await CloudHound.newQuery({ bucket: 'myBucket' })
+  .limit(10)
+  .find();
+
+console.log(objects);
 ```

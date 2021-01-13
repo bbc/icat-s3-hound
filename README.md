@@ -19,8 +19,11 @@ npm install --save cloudhound
 ```ts
 import {S3Hound} from 'cloudhound';
 
-const cloudHound = S3Hound.newQuery({ bucket: 'myBucket' });
-const objects = await cloudhound.find(); // all objects
+const objects = await S3Hound.newQuery({ bucket: 'myBucket' })
+  .prefix('csv')
+  .limit(50)
+  .find();
+
 console.log(objects);
 ```
 ## Documentation
