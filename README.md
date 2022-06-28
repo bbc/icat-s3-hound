@@ -43,3 +43,10 @@ npm run coverage
 ## Contributing
 
 See [contributing guide](./CONTRIBUTING.md)
+
+## Releasing
+
+1. Bump the version number in package.json.
+2. Run `npm install` to make sure the package-lock.json is updated as well.
+3. Commit and push to main.
+4. Run `npm run no-npm`.
