@@ -55,12 +55,12 @@
     "@types/sinon": "^4.0.0",
     "chai": "^4.1.2",
     "coveralls": "^3.0.0",
-    "eslint": "^4.19.1",
+    "eslint": "^8.18.0",
     "eslint-config-iplayer-base": "^1.0.0",
-    "jsdoc": "^3.4.3",
+    "jsdoc": "^3.6.10",
     "mocha": "^10.0.0",
     "no-npm": "github:bbc/no-npm#semver:^2.0.0",
-    "nyc": "^11.2.1",
+    "nyc": "^15.1.0",
     "sinon": "^2.3.6",
     "ts-node": "^7.0.1",
     "tslint": "^5.8.0",
@@ -83,6 +83,6 @@
   },
   "dependencies": {
     "aws-sdk": "^2.823.0",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.21"
   }
 }
