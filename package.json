@@ -1,6 +1,6 @@
 {
   "name": "cloudhound",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Find objects in the cloud",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -48,18 +48,19 @@
   },
   "homepage": "https://github.com/nspragg/cloudhound",
   "devDependencies": {
-    "coveralls": "^3.0.0",
     "@types/chai": "^4.2.12",
     "@types/lodash": "^4.14.161",
     "@types/mocha": "^2.2.43",
     "@types/node": "^10.12.18",
     "@types/sinon": "^4.0.0",
-    "eslint": "^4.19.1",
-    "eslint-config-iplayer-base": "^1.0.0",
     "chai": "^4.1.2",
-    "jsdoc": "^3.4.3",
+    "coveralls": "^3.0.0",
+    "eslint": "^8.18.0",
+    "eslint-config-iplayer-base": "^1.0.0",
+    "jsdoc": "^3.6.10",
+    "mocha": "^10.0.0",
     "no-npm": "github:bbc/no-npm#semver:^2.0.0",
-    "nyc": "^11.2.1",
+    "nyc": "^15.1.0",
     "sinon": "^2.3.6",
     "ts-node": "^7.0.1",
     "tslint": "^5.8.0",
@@ -82,9 +83,6 @@
   },
   "dependencies": {
     "aws-sdk": "^2.823.0",
-    "lodash": "^4.17.20"
-  },
-  "peerDependencies": {
-    "aws-sdk": "^2.823.0"
+    "lodash": "^4.17.21"
   }
 }

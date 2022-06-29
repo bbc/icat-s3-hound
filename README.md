@@ -7,8 +7,6 @@
 
 > Flexible and fluent interface finding files in the cloud
 
-⚠️ 🔥  This is an early release 🔥 ⚠️
-
 ## Installation
 
 ```
