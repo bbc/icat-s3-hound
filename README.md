@@ -14,6 +14,12 @@
 ```
 npm install --save cloudhound
 ```
+## Setup
+To build the project, run the following command:
+
+```shell
+npm install aws-sdk@2.823.0 --no-save
+```
 
 ## Usage
 ```ts
