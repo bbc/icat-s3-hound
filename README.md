@@ -7,18 +7,10 @@
 
 > Flexible and fluent interface finding files in the cloud
 
-⚠️ 🔥  This is an early release 🔥 ⚠️
-
 ## Installation
 
 ```
 npm install --save cloudhound
-```
-## Setup
-To build the project, run the following command:
-
-```shell
-npm install aws-sdk@2.823.0 --no-save
 ```
 
 ## Usage

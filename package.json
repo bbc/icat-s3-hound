@@ -81,9 +81,7 @@
     "instrument": true
   },
   "dependencies": {
+    "aws-sdk": "^2.823.0",
     "lodash": "^4.17.20"
-  },
-  "peerDependencies": {
-    "aws-sdk": "^2.823.0"
   }
 }
