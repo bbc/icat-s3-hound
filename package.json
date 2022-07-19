@@ -1,6 +1,6 @@
 {
   "name": "cloudhound",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Find objects in the cloud",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,8 +13,7 @@
     "build": "tsc",
     "watch": "tsc --watch",
     "clean": "rm -fr lib/*",
-    "prepublish": "npm run build",
-    "prepublishOnly": "tsc -p ./ --outDir dist",
+    "prepack": "npm run build",
     "test": "mocha -r ts-node/register test/*.ts",
     "posttest": "npm run lint",
     "lint": "eslint . --ext .ts --ext .json",

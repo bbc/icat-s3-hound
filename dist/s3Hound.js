@@ -16,7 +16,7 @@ class S3Hound extends events_1.EventEmitter {
         this.maxRequests = params.maxRequests || Infinity;
         this._prefix = params.prefix;
         this._limit = params.limit || Infinity;
-        bind_1.bind(this);
+        (0, bind_1.bind)(this);
     }
     static newQuery(params) {
         return new S3Hound(params);
