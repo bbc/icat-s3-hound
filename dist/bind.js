@@ -4,6 +4,7 @@ exports.bind = void 0;
 function isMethod(propertyName, value) {
     return propertyName !== 'constructor' && typeof value === 'function';
 }
+// eslint-disable-next-line @typescript-eslint/ban-types
 function bind(obj) {
     const propertyNames = Object.getOwnPropertyNames(obj.constructor.prototype);
     propertyNames.forEach((propertyName) => {
