@@ -1,1 +1,1 @@
-export {S3Hound} from './s3Hound';
+export { S3Hound } from './s3Hound';

@@ -1,7 +1,7 @@
 import * as AWS from 'aws-sdk';
-import {assert} from 'chai';
+import { assert } from 'chai';
 import * as sinon from 'sinon';
-import {S3Hound} from '../src/s3Hound';
+import { S3Hound } from '../src/s3Hound';
 import * as SimpleS3Factory from '../src/simpleS3Factory';
 
 const sandbox = sinon.sandbox.create();
@@ -10,7 +10,7 @@ const page1 = require('./fixtures/page1');
 const page2 = require('./fixtures/page2');
 const page3 = require('./fixtures/page3');
 
-AWS.config.update({region: 'eu-west-1'});
+AWS.config.update({ region: 'eu-west-1' });
 
 describe('S3Hound', async () => {
   let getClient;
@@ -18,7 +18,7 @@ describe('S3Hound', async () => {
   let s3Client;
   let listStub;
   beforeEach(() => {
-    cloudHound = S3Hound.newQuery({bucket: 'myBucket'});
+    cloudHound = S3Hound.newQuery({ bucket: 'myBucket' });
     listStub = sandbox.stub().resolves(results);
     s3Client = {
       listObjectsV2: sinon.stub().returns({ promise: listStub })
@@ -46,7 +46,7 @@ describe('S3Hound', async () => {
       getClient.resolves({
         listObjectsV2: () => {
           return {
-            promise: async () => {
+            promise: async (): Promise<any> => {
               return pageStack.pop();
             }
           };
@@ -64,7 +64,7 @@ describe('S3Hound', async () => {
         .prefix('json')
         .find();
 
-      sinon.assert.calledWith(s3Client.listObjectsV2, sinon.match({Prefix: 'json'}));
+      sinon.assert.calledWith(s3Client.listObjectsV2, sinon.match({ Prefix: 'json' }));
     });
 
     it('throws for an empty prefix', async () => {

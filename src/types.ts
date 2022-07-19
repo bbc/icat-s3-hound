@@ -1,4 +1,4 @@
-import {S3} from 'aws-sdk';
+import { S3 } from 'aws-sdk';
 
 export type Nullable<T> = T | undefined | null;
 
@@ -11,7 +11,9 @@ export interface S3HoundParams {
 }
 
 export interface CloudHound {
+  // eslint-disable-next-line no-unused-vars
   limit(n: number): CloudHound;
+  // eslint-disable-next-line no-unused-vars
   prefix(prefix: string): CloudHound;
   find(): Promise<Response>;
 }

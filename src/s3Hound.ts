@@ -1,6 +1,6 @@
-import {S3} from 'aws-sdk';
-import {EventEmitter} from 'events';
-import {bind} from './bind';
+import { S3 } from 'aws-sdk';
+import { EventEmitter } from 'events';
+import { bind } from './bind';
 import * as DefaultFactory from './simpleS3Factory';
 import {
   CloudHound,
@@ -48,7 +48,9 @@ export class S3Hound extends EventEmitter implements CloudHound {
   }
 
   limit(n: number): CloudHound {
-    if (n < 1) { throw new Error('limit must be >= 1'); }
+    if (n < 1) {
+      throw new Error('limit must be >= 1');
+    }
     this._limit = n;
     return this;
   }
@@ -108,7 +110,7 @@ export class S3Hound extends EventEmitter implements CloudHound {
   private composeFilters(): any {
     const filters = this.filters;
 
-    return (entry) => {
+    return (entry): boolean => {
       let match = true;
       for (const filter of filters) {
         match = match && filter(entry);
