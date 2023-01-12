@@ -1,3 +1,7 @@
+# Archived
+
+We are archiving this repo as the s3 key lister will be taking over from cloudhound https://github.com/bbc/iplayer-catalogue/tree/main/libs/s3-key-lister.
+
 # Cloudhound
 
 ![npm](https://img.shields.io/npm/v/cloudhound.svg)
